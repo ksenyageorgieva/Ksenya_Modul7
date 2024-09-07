@@ -1,0 +1,48 @@
+﻿@page
+@using Ksenya_Modul7.Models
+@model Ksenya_Modul7.Pages.SongsModel
+@{
+    <h1>Songs</h1>
+    <form method="post">
+        <input type="number" name="id" />
+        <input type="text" name="name" />
+        <input type="text" name="author" />
+
+        <button type="submit">Add</button>
+    </form>
+
+    <table class="table">
+
+        <thead>
+            <tr>
+
+                <th>Id</th>
+                <th>Name</th>
+                <th>Author</th>
+
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (Song song in Model.Songs)
+            {
+                <tr>
+
+                    <td>
+                        @song.Id
+                    </td>
+
+                    <td>
+                        @song.Name
+                    </td>
+
+                    <td>
+                        @song.Author
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+
+    </table>
+}
